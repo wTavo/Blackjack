@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/table_poker"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context=".Game">
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@android:color/transparent"
+        android:drawableTint="#FFFFFF"
+        app:icon="@drawable/exit"
+        app:iconGravity="textStart"
+        app:iconSize="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <Button
+        android:id="@+id/btnPedir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:backgroundTint="#448E4C"
+        android:text="@string/ask_hit"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnDoblar"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94"
+        app:layout_goneMarginEnd="10dp" />
+
+    <Button
+        android:id="@+id/btnDoblar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:backgroundTint="#D97706"
+        android:text="@string/double_down"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPlantarse"
+        app:layout_constraintStart_toEndOf="@+id/btnPedir"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94" />
+
+    <Button
+        android:id="@+id/btnPlantarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:backgroundTint="#7A1515"
+        android:text="@string/stand"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnDoblar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94"
+        app:layout_goneMarginStart="10dp" />
+
+    <!-- Puntajes CPU: Exactamente a 12dp debajo de las cartas del CPU -->
+    <LinearLayout
+        android:id="@+id/puntajesCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fila1CPU">
+
+        <TextView
+            android:id="@+id/tvPuntajeCPU"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="#DDD6D6"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/tvSeparador2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="#DDD6D6"
+            android:gravity="center"
+            android:text="/"
+            android:textSize="17dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPuntajeCPU2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="#DDD6D6"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="17dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Puntajes Usuario: Exactamente a 12dp arriba de las cartas del usuario -->
+    <LinearLayout
+        android:id="@+id/puntajesUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fila1Usuario">
+
+        <TextView
+            android:id="@+id/tvPuntajeUsuario"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="#DDD6D6"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/tvSeparador"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="#DDD6D6"
+            android:gravity="center"
+            android:text="/"
+            android:textSize="17dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPuntajeUsuario2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="#DDD6D6"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="17dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Fila 1 CPU (Base en la parte superior, bias 0.22) -->
+    <LinearLayout
+        android:id="@+id/fila1CPU"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22">
+
+    </LinearLayout>
+
+    <!-- Fila 2 CPU (Apilada en cascada 45dp HACIA ARRIBA sobre Fila 1) -->
+    <LinearLayout
+        android:id="@+id/fila2CPU"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/fila1CPU">
+
+    </LinearLayout>
+
+    <!-- Fila 1 Usuario (Base en la parte inferior, bias 0.72) -->
+    <LinearLayout
+        android:id="@+id/fila1Usuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72">
+
+    </LinearLayout>
+
+    <!-- Fila 2 Usuario (Apilada en cascada 45dp HACIA ABAJO sobre Fila 1) -->
+    <LinearLayout
+        android:id="@+id/fila2Usuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fila1Usuario">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dealer"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="361dp"
+        tools:layout_editor_absoluteY="498dp" />
+
+    <TextView
+        android:id="@+id/tvPuntuacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <!-- Vista de Inspección Flotante en la capa superior absoluta -->
+    <ImageView
+        android:id="@+id/inspectCardView"
+        android:layout_width="250px"
+        android:layout_height="350px"
+        android:visibility="gone"
+        android:elevation="200dp"
+        android:translationZ="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

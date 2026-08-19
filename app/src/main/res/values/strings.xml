@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">BlackJack</string>
+    <string name="title_activity_room">Room</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_main">Principal</string>
+    <string name="menu_leaderboard">Puntuaciones</string>
+    <string name="menu_settings">Configuración</string>
+    <string name="title_activity_room_main">RoomMain</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="blackjack_brand">BlackJack</string>
+    <string name="username_label">Jugador</string>
+    <string name="score_prefix">Puntuación: %1$d</string>
+    <string name="rank_prefix">%1$d.</string>
+    <string name="play">Jugar</string>
+    <string name="ask_hit">Pedir</string>
+    <string name="double_down">x2</string>
+    <string name="stand">Plantarse</string>
+    <string name="dealer">CPU</string>
+    <string name="exit">Salir</string>
+    <string name="continue_game">Seguir</string>
+    <string name="play_again">Volver a jugar</string>
+    <string name="abandon">Abandonar</string>
+    <string name="offline_play">Jugar sin conexión</string>
+    <string name="no_connection">Sin conexión</string>
+    <string name="no_internet">No hay conexión a Internet</string>
+    <string name="confirm_exit_title">¿Seguro de que quieres abandonar?</string>
+    <string name="confirm_exit_message">Perderás todo tu progreso.</string>
+    <string name="win">Has ganado</string>
+    <string name="perfect_entry">Entrada perfecta, has ganado</string>
+    <string name="lose">Has perdido</string>
+    <string name="draw">Empate</string>
+    <string name="game_score_message">Tu puntuación: %1$d</string>
+    <string name="new_record">¡Nuevo récord!</string>
+    <string name="record_registered">¡Nuevo record registrado!</string>
+    <string name="score_sync_error">Hubo un problema al registrar el nuevo récord</string>
+    <string name="score_sync_failed">No se pudo guardar el récord en Firebase: %1$s</string>
+    <string name="unknown_firebase_error">error desconocido</string>
+    <string name="resume_game">Reanudar</string>
+    <string name="new_game">Juego nuevo</string>
+    <string name="username_title">Elige un nombre de usuario</string>
+    <string name="username_message">Usaremos este nombre para mostrar tu récord en el ranking.</string>
+    <string name="username_hint">Nombre de usuario</string>
+    <string name="username_required">Escribe un nombre para continuar</string>
+    <string name="save_username">Guardar</string>
+    <string name="close">Cerrar</string>
+    <string name="default_username">Jugador</string>
+</resources>

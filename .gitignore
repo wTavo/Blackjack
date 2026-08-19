@@ -1,0 +1,17 @@
+*.iml
+**/.gradle/
+/local.properties
+app/google-services.json
+/.idea/
+.DS_Store
+**/build/
+/captures
+**/.externalNativeBuild/
+**/.cxx/
+
+# Codex/local planning artifacts
+/.artifacts/
+docs/superpowers/
+
+# Local Gradle daemon configuration
+**/gradle-daemon-jvm.properties
